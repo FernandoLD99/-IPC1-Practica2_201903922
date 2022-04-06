@@ -35,12 +35,12 @@ public final class BarChart extends ApplicationFrame {
 
     }
 
-    public void crearImagen() {
+    public void crearImagen(String imagen) {
         int width = 640;
         /* Width of the image */
         int height = 480;
         /* Height of the image */
-        File BarChart = new File("BarChart.jpeg");
+        File BarChart = new File(imagen);
         try {
             ChartUtilities.saveChartAsJPEG(BarChart, barChart, width, height);
         } catch (IOException ex) {

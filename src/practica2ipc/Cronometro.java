@@ -1,20 +1,29 @@
 
 package practica2ipc;
 
+import javax.swing.JLabel;
+import static practica2ipc.Practica2IPC.detener;
 import static practica2ipc.Practica2IPC.milisegundos;
 import static practica2ipc.Practica2IPC.segundos;
 import static practica2ipc.Practica2IPC.minutos;
-import static practica2ipc.Practica2IPC.tiempo;
+
 
 /**
  *
  * @author Fernando
  */
     public class Cronometro extends Thread {
+    public JLabel temporizador;
+
+    public Cronometro(JLabel temporizador) {
+        this.temporizador = temporizador;
+    }
+    
     
     @Override
     public void run() {
-        while (true) {
+        detener = false;
+        while (!detener) {
             try {
                 Thread.sleep(1);
             } catch (InterruptedException ex) {
@@ -29,7 +38,7 @@ import static practica2ipc.Practica2IPC.tiempo;
                 minutos++;
                 segundos = 0;
             }
-            tiempo.setText(String.valueOf(minutos) + ":" + String.valueOf(segundos) + ":" + String.valueOf(milisegundos));
+            temporizador.setText(String.valueOf(minutos) + ":" + String.valueOf(segundos) + ":" + String.valueOf(milisegundos));
         }
     }
     

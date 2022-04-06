@@ -11,7 +11,11 @@ public class Practica2IPC {
    public static int milisegundos;
    public static int segundos;
    public static int minutos;
-   public static JLabel tiempo;
+   public static boolean detener;
+   public static int pasos;
+   public static String imagenIn;
+   public static String imagenOut;
+   
   
     
     public static void main(String[] args) {
@@ -27,11 +31,9 @@ public class Practica2IPC {
         
         
         
+        
     }
+   
     
-    public static void cronometro(){  
-    Cronometro c = new Cronometro();
-    c.start();
-    }
     
 }
